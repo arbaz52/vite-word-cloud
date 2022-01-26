@@ -112,18 +112,22 @@ const words =
   `Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, dolor sunt
 aut nulla eos odio. Consectetur nemo optio vero sint.`.split(" ");
 
-if (target)
-  generateWordCloud(
-    target,
-    Object.fromEntries(
-      new Map(
-        words.filter(Boolean).map((word) => [word.trim(), Math.random() * 100])
-      )
-    ),
-    {
-      maxFontSize: 62,
-      minFontSize: 12,
-      spreadY: 1,
-      spreadX: 2,
-    }
-  );
+setTimeout(() => {
+  if (target)
+    generateWordCloud(
+      target,
+      Object.fromEntries(
+        new Map(
+          words
+            .filter(Boolean)
+            .map((word) => [word.trim(), Math.random() * 100])
+        )
+      ),
+      {
+        maxFontSize: 62,
+        minFontSize: 12,
+        spreadY: 1,
+        spreadX: 2,
+      }
+    );
+}, 500);
